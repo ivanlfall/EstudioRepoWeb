@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Canvas II</title>
+	<link rel="stylesheet" href="">
+
+	<style type="text/css">
+
+		section{
+
+			width: 500px;
+			margin: auto;
+			text-align: center;
+		}
+
+
+	</style>
+
+	<script type="text/javascript">
+		
+		var elemento;
+
+		function comenzar(){
+
+			elemento=document.getElementById("lienzo");
+
+			var pincel = elemento.getContext("2d");
+
+			var degradado = pincel.createRadialGradient(250, 150, 100 ,250, 150, 200); //pincel.createLinearGradient(0, 0, 500, 300);
+
+			degradado.addColorStop(1, "#5E5BDF");
+			degradado.addColorStop(0, "#DBDB57");
+
+			pincel.fillStyle=degradado;
+
+			pincel.fillRect(0, 121, 500, 50);
+		}
+
+		window.addEventListener("load", comenzar, false);
+
+	</script>
+
+</head>
+<body>
+	
+	<section id="dibujo">
+		<canvas id="lienzo" width="500" height="300">
+
+			Su navegador, no soporta el elemento Canvas.
+			
+		</canvas>
+	</section>
+
+
+</body>
+</html>

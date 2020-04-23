@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Texto en Canvas</title>
+	
+	<link rel="stylesheet" href="EstiloCanvas.css">
+
+	<script>
+
+		function inicio(){
+		
+			var lienzo = document.getElementById("lienzo");
+
+			var pincel = lienzo.getContext("2d");
+
+			pincel.beginPath();
+			pincel.font="bold 20px arial";
+			pincel.textAlign="start";
+			pincel.textBaseline = "top"; 
+			pincel.fillText("Hola Mundo", 100, 100);
+
+			var dimensiones = pincel.measureText("Hola Mundo");
+
+			pincel.strokeRect(100, 100, dimensiones.width, 20);
+
+		}
+
+		window.addEventListener("load", inicio, false);
+
+	</script>
+
+
+</head>
+<body>
+	<section>
+		<canvas id="lienzo" width="500" height="300">
+
+			Tu navegador no es compatible con el elemento Canvas.
+			
+		</canvas>
+		
+	</section>
+	
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Trazado de lineas</title>
+
+	<link rel="stylesheet" type="text/css" href="EstiloCanvas.css">
+
+<script>
+	
+	function inicio(){
+
+		var lienzo = document.getElementById("lienzo");
+
+		var pincel = lienzo.getContext("2d");
+
+		pincel.beginPath(); // Cabeza
+		pincel.arc(250, 150, 80, 0, Math.PI * 2, true);
+		pincel.stroke();
+		pincel.beginPath(); // Ojo izquierdo
+		pincel.arc(220, 125, 15, 0, Math.PI * 2, true);
+		pincel.stroke();
+		pincel.beginPath(); // Ojo derecho
+		pincel.arc(280, 125, 15, 0, Math.PI * 2, true);
+		pincel.stroke();
+		pincel.beginPath(); // Boca
+		pincel.lineWidth = 3;
+		pincel.lineCap = "round";
+		pincel.arc(250, 170, 30, 0, Math.PI , false);
+		pincel.stroke();
+		pincel.moveTo(220,170);
+		pincel.lineTo(280,170);
+		pincel.stroke();
+
+	}
+
+
+	window.addEventListener("load", inicio, false);
+</script>
+
+</head>
+<body>
+	<section id="dibujo">
+		<canvas id="lienzo" width="500" height="300">
+			
+			Tu navegador no es compatible con el elemento Canvas.
+
+		</canvas>
+		
+	</section>
+	
+</body>
+</html>

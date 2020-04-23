@@ -1,0 +1,56 @@
+
+
+h1 {
+			width: 500px ;
+			text-align: center;
+			margin: 20px auto ;
+			padding: 15px ;
+			border-radius: 20px ;
+			box-shadow: #34814C 5px 5px 10px;
+			background: -webkit-linear-gradient(top, #34814C 10% , #81ECA8 90%);
+
+}
+
+
+
+img {
+
+	padding: 4px;
+	background-color: #9B9E9C ;
+	width: 210px ;
+	height: 150px ;
+	border-radius: 20px ;
+	box-shadow: #9B9E9C 5px 5px 10px;
+}
+
+section {
+
+	width: 91% ;
+	border-top: 1px dashed #9B9E9C ;
+	margin: 10px auto ;
+}
+
+figure {
+
+	display: inline-block;
+	-webkit-transition: -webkit-transform 0.3s ease-in-out 0.2s ;
+}
+
+figure:hover{
+
+	-webkit-transform: scale(1.1);
+}
+
+figcaption {
+
+	text-align: center;
+	font-size: 1.1em ;
+}
+
+footer {
+
+	padding-top: 100px ;
+	font-size: 1.1em ;
+	color: #9B9E9C ;
+}
+

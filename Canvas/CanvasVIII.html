@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>globalCompositeOperation</title>
+	
+	<style>
+
+		section{
+
+			width: 500px;
+			margin: auto; 
+			border: 2px solid;
+		}
+		
+	</style>
+
+	<script>
+		
+		function inicio(){
+
+			var lienzo = document.getElementById("lienzo");
+			var pincel = lienzo.getContext("2d");
+
+			/*pincel.fillStyle="#E3E840";
+			pincel.fillRect(100,150,70,70);
+
+			pincel.globalCompositeOperation="lighter";
+
+			pincel.fillStyle="#405EE8";
+			pincel.fillRect(100+35,150+35,70,70);*/
+
+			var imagen = new Image();
+
+			imagen.src="https://i.pinimg.com/564x/6a/be/53/6abe533a7d5d92a45a48ceafbb0944d7.jpg";
+
+			imagen.addEventListener("load", function(){
+				pincel.drawImage(imagen, 0, 0);
+			}, false);
+			
+
+		}
+
+
+		window.onload=inicio;
+	</script>
+</head>
+<body>
+	<section>
+		<canvas id="lienzo" width="500" height="300">
+			
+		</canvas>
+		
+	</section>
+	
+</body>
+</html>

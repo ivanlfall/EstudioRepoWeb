@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Trazados Canvas</title>
+	
+	<style>
+		section{
+
+			text-align: center;
+			margin: auto;
+
+		}
+		
+	</style>
+
+	<script>
+		
+		function comenzar(){
+			
+			var lienzo = document.getElementById("lienzo");
+			var pincel = lienzo.getContext("2d");
+
+			pincel.beginPath();
+			pincel.moveTo(300,100);
+			pincel.lineTo(400,100);
+			pincel.lineTo(400,200);
+			pincel.lineTo(300,200);
+			pincel.lineTo(300,100);
+			pincel.clip();
+
+			pincel.beginPath();
+			
+			for(i=0; i<100; i+=20){
+
+					pincel.moveTo(0,100+i);
+					pincel.lineTo(500,100+i);
+			}
+
+			pincel.stroke();
+		}
+
+
+ 		window.addEventListener("load", comenzar, false);
+	</script>
+
+
+</head>
+<body>
+	<section id="dibujo">
+		<canvas id="lienzo" width="500" height="300">
+
+			Tu navegador no es compatible con el elemento Canvas.
+			
+		</canvas>
+		
+	</section>
+	
+</body>
+</html>

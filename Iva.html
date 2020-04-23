@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+      var impuesto, precio, resultado;
+      var inputPrecio, inputImpuesto, inputResultado;
+
+      function comenzar(){
+
+        inputPrecio = document.getElementsByName("precio")[0];
+        inputImpuesto = document.getElementsByName("impuesto")[0];
+        inputResultado = document.getElementsByName("resultado")[0];
+
+        inputImpuesto.addEventListener("blur", obtener, false);
+
+      }
+
+      function obtener(){
+
+        precio = inputPrecio.value;
+        impuesto = inputImpuesto.value;
+
+        if (impuesto==0){
+
+          calculaConIva(precio);
+        }else{
+
+          calculaConIva(precio, impuesto);
+        }
+
+      }
+
+      function calculaConIva(precio, imp = 21){
+
+        var iva = 1 + (imp/100);
+
+        var res = precio*iva ;
+
+        inputResultado.value = res;
+
+      }
+
+
+      window.onload = comenzar;
+    </script>
+
+</head>
+<body>
+
+    <h1>
+        Todos putos!!
+      </h1>
+      <p>
+        Crea una función que reciba 2 parámetros, precio e iva, y devuelva el precio con iva incluido. Si no recibe el iva, aplicará el 21 por ciento por defecto.
+      </p>
+      
+      PRECIO: <input type="text" name="precio" id="precio" >
+      IVA: <input type="text" name="impuesto" id="impuesto"> 
+      
+      Resultado: <input type="text" name="resultado" id="resultado">
+
+      <p id="pruebaMuestra">
+
+      </p>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+
+body{
+		background-color: #BEF8F7;
+
+}
+
+#CabeceraWeb{
+
+	background-color: #E9F067;
+}
+
+#NavegacionPrincipal{
+
+	background-color: #E3E3D8 ;
+}
+
+#BarraLateral{
+
+	background-color: #4AB5E7 ;
+	float: left;
+	height: 1270px ;
+}
+
+#ContenidoPrincipal{
+
+	background-color: #E77B4A ;
+	margin-left: 208px ;
+	padding-left: 20px;
+	padding-top: 20px ;
+
+}
+
+#PiedePagina{
+
+	background-color: #4AE783 ;
+	clear: both;
+	margin-top: 20px;
+}
+
+li {
+
+	background-color: yellow ;
+	display: inline;
+}
+

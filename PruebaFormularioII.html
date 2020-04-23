@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formularios II</title>
+
+<style type="text/css">
+	
+table{
+	text-align: center;
+	background-color: #92E8B1;
+	border: 2px solid #42A867;
+	width: 300px;
+	margin: auto;
+}
+
+td{
+	padding: 15px;
+}
+
+
+
+</style>
+<script>
+	
+	function comenzar(){
+
+		var nombre=document.getElementById("nombre");
+		var apellido=document.getElementById("apellido");
+
+		nombre.addEventListener("input",validar, false);
+		apellido.addEventListener("input",validar, false);
+
+		validar();
+	}
+
+	function validar(){
+
+		if (nombre.value=="" && apellido.value=="") {
+
+			nombre.setCustomValidity("Completa los campos obligatorios");
+			nombre.style.background="#D88D8D";
+			apellido.style.background="#D88D8D";
+		}
+		else{
+			nombre.setCustomValidity("");
+			nombre.style.background="#FFFFFF";
+			apellido.style.background="#FFFFFF";
+		}
+
+	}
+
+
+
+window.addEventListener("load",comenzar, false);
+
+</script>
+
+
+</head>
+<body>
+
+	<section>
+		<form name="registro_usuario" method="get">
+			<table><tr>
+				<td>*Nombre:</td><td><input type="text" name="nombre" id="nombre"></td>
+					</tr>
+				<tr>
+				<td>*Apellido:</td><td><input type="text" name="apellido" id="apellido"></td>
+					</tr>
+				<tr>
+				<td>Edad:</td><td><input type="number" name="edad" id="edad" min="16" max="110"></td>
+					</tr>
+				<tr>
+				<td>Telefono:</td><td><input type="tel" name="telefono" id="telefono"></td>
+					</tr>
+				<tr><td><input type="submit" name="enviar" value="Enviar"></td></tr>
+
+
+			</table>
+		<!--	<datalist id="informacion">
+				<option value="123456789" label="     Telefono 1"></option>
+				<option value="987654321" label="     Telefono 2"></option>
+				<option value="135791357" label="     Telefono 3"></option>
+
+			</datalist>
+			
+			Telefono:&nbsp;<input type="tel" name="telefono" id="telefono" list="informacion">
+			<button name="enviar" value="Enviar">Enviar</button> -->
+
+		</form>
+
+	</section>
+
+</body>
+</html>

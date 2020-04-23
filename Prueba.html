@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prueba</title>
+
+	<style type="text/css">
+		
+		p:nth-child(2){
+
+			color: red ;
+		}
+
+		p {
+			text-align: center;
+			margin: 20px auto;
+		}
+
+		#principal{
+
+			width: 500px ;
+			/*background-color: #81ECA8 ;*/
+			text-align: center;
+			margin: 20px auto ;
+			padding: 15px ;
+			border-radius: 10px ;
+			box-shadow: #D3D6D4 5px 5px 10px;
+			background: -webkit-radial-gradient(center , ellipse , #97F4B3 , #044E1B);
+			/*-webkit-transform: scale(1.5); Propiedad que sirve para reducir o aumentar el tamaño del objeto*/
+			-webkit-transition: -webkit-transform 0.5s ease 0.2s; /* Genera la transformacion en un tiempo dado */
+
+		}
+
+		#principal:hover{/*Realiza acciones al pasar cursor por encima*/
+			-webkit-transform: scale(1.1);
+		}
+
+		#titulo{
+
+			font: bold 26px verdana, geneva, sans-serif;
+			text-shadow: #D3D6D4 5px 5px 10px;
+			color: rgba(0,0,0,0.6);
+		
+		}
+
+	
+
+
+	</style>
+</head>
+<body>
+
+		<header id="principal">
+				
+				<samp id="titulo">Muestra de centrado en caja</samp>
+
+		</header>
+
+
+
+		<p name ="miselementos">Hola</p>
+		<p name = "miselementos">Adios</p>
+		<p>Lala</p>
+
+</body>
+</html>

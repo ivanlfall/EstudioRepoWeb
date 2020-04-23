@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Canvas: Animaciones</title>
+
+	<style>
+
+		section{
+			border: 4px solid;
+			margin: auto;
+			width: 800px;
+
+		}
+
+	</style>
+
+	<script>
+		var conteo = 30;
+		var direccion = false;
+		var lienzo, pincel;
+		var disminuye_rebote = 30;
+		var desplaza = 0;
+
+		function inicio(){
+
+			lienzo = document.getElementById("lienzo");
+			pincel = lienzo.getContext("2d");
+
+			setInterval(rebote, 20);
+
+		}
+
+		function rebote() {
+
+			
+
+			if (direccion==false){
+
+				if (conteo==lienzo.height-30) {direccion = true; disminuye_rebote+=80;}
+				conteo+=20;
+				desplaza+=2;
+				lienzo.width=lienzo.width;
+				pincel.fillStyle="#40E899";
+				pincel.beginPath();
+				pincel.arc(400+desplaza, conteo, 30, 0, Math.PI*2);
+				pincel.fill();
+				
+
+			} else {
+
+				
+				let topLienzo = disminuye_rebote;
+
+				if (conteo==topLienzo || topLienzo>=lienzo.width) direccion = false;
+				conteo-=20;
+				desplaza+=2;
+				lienzo.width=lienzo.width;
+				pincel.fillStyle="#40E899";
+				pincel.beginPath();
+				pincel.arc(400+desplaza, conteo, 30, 0, Math.PI*2);
+				pincel.fill();
+				
+				
+			}
+		}
+
+		window.onload=inicio;
+
+		/*const baja = setInterval(x => {
+
+				conteo+=10;
+				lienzo.width=lienzo.width;
+				if (conteo==lienzo.height-30) { 
+					clearInterval(baja); 
+					
+					
+				}
+
+				pincel.fillStyle="#40E899";
+				pincel.beginPath();
+				pincel.arc(400, conteo, 30, 0, Math.PI*2);
+				pincel.fill();
+
+			}, 25);*/
+	</script>
+	
+
+</head>
+<body>
+	<section>
+		<canvas id="lienzo" width="800" height="500">
+			Su navegador no soporta esta tecnologia.
+		</canvas>
+	</section>
+</body>
+</html>

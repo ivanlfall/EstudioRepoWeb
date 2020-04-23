@@ -1,0 +1,12 @@
+section{
+
+			text-align: center;
+			margin: auto;
+			width: 500px; 
+			position: relative;
+		}
+
+		#lienzo{
+
+			border: 2px solid black;
+		}

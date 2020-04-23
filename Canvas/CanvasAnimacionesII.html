@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Canvas: Animaciones 2</title>
+	
+
+	<style>
+		
+		section{
+			border: 4px solid;
+			margin: auto;
+			width: 800px;
+
+		}
+
+	</style>
+
+	<script>
+
+		var pincel, lienzo;
+		
+		function inicio(){
+
+			lienzo = document.getElementById("lienzo");
+			pincel = lienzo.getContext("2d");
+
+			window.addEventListener("mousemove", animacion);
+
+		}
+
+		function animacion(e){
+
+			lienzo.width=lienzo.width;
+
+			let coorXRaton = e.clientX;
+			let coorYRaton = e.clientY;
+
+			let xCentro = 400;
+			let yCentro = 250;
+
+			let angulo = Math.atan2(coorXRaton-xCentro, coorYRaton-yCentro);
+
+			let x = xCentro+Math.round(Math.sin(angulo)*10);
+
+			let y = yCentro+Math.round(Math.cos(angulo)*10);
+
+			pincel.beginPath();
+
+			pincel.arc(xCentro, yCentro, 20, 0, Math.PI*2);
+			pincel.stroke();
+
+			pincel.moveTo(420,yCentro);
+
+			pincel.beginPath();
+			pincel.arc(480, yCentro, 20, 0, Math.PI*2);
+
+			pincel.stroke();
+
+			pincel.beginPath();
+			pincel.arc(x,y,10,0, Math.PI*2);
+			pincel.fill();
+			pincel.beginPath();
+			pincel.moveTo(x,y);
+			pincel.arc(x+80,y,10,0,Math.PI*2);
+			pincel.fill();
+
+
+
+		}
+
+		window.onload=inicio;
+	</script>
+</head>
+<body>
+	<section>
+		<canvas id="lienzo" width="800" height="500">
+			
+		</canvas>
+		
+	</section>
+	
+</body>
+</html>

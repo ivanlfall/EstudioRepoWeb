@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Formualrios III</title>
+
+	<style type="text/css">
+	
+	table{
+		text-align: center;
+		background-color: #92E8B1;
+		border: 2px solid #42A867;
+		border-radius: 8px;
+		width: 300px;
+		margin: auto;
+		box-shadow: #92E8B1 5px 3px 8px; /* Agrego sombra al cuadro, uiltimo parametro es la transparencia*/
+	}
+
+	td{
+		padding: 15px;
+	}
+
+
+
+</style>
+
+<script>
+
+	var edad;
+	
+	function comenzar(){
+
+		edad=document.getElementById("miedad");
+		edad.addEventListener("change", modificaOutputEdad, false);
+
+		document.datos_usuario.addEventListener("invalid", validar, true);
+
+		document.getElementById("enviar").addEventListener("click", enviar, false);
+
+		document.datos_usuario.addEventListener("input", validarTiempoReal, false);
+
+	}
+
+	function modificaOutputEdad(){
+
+		var salida = document.getElementById("range");
+		var calculo= edad.value-18;
+
+		if (calculo<18){
+			
+			calculo=0;
+
+			edad.value=18;
+
+		}
+
+		salida.innerHTML=calculo + " a " + edad.value;
+
+	}
+
+	function validar(e){
+
+		var elemento= e.target; // atributo e=error de metodo invalid. e.target = objeto que desencadena el error
+		elemento.style.background="#D88D8D"; 
+
+	}
+
+	function validarTiempoReal(e){
+
+		var elemento = e.target;
+		if (elemento.validity.valid){
+
+			elemento.style.background="#FFFFFF";
+		}else{
+
+			elemento.style.background="#D88D8D";
+		}
+
+	}
+
+	function enviar(){
+
+		var cuadroUsuario = document.getElementById("usuario");
+
+		var correcto= document.datos_usuario.checkValidity(); // checkValidity() devuelve dato booleano en validacion formulario
+
+		if (correcto){
+
+			document.datos_usuario.submit();
+		} else if(cuadroUsuario.validity.valueMissing){
+
+			alert("El usuario no puede estar vacio");
+
+		}
+
+	}
+
+
+
+window.addEventListener("load",comenzar, false);
+
+</script>
+
+</head>
+<body>
+
+	<section>
+		<form name="datos_usuario" method="get">
+			<table><tr>
+				<td>*Usuario:</td><td><input pattern="[A-Za-z]{3}" name="usuario" id="usuario" maxlength="5" required></td>
+					</tr>
+				<tr>
+				<td>*Email:</td><td><input type="email" name="miemail" id="miemail" required></td>
+					</tr>
+				<tr>
+				<td>Edad:</td><td><input type="range" name="miedad" id="miedad" min="0" max="108" step="18" value="18"></td>
+					</tr>
+				<tr><td><output id="range">0 a 108</output></td></tr>
+				<tr><td><input type="submit" name="enviar" id="enviar" value="Enviar"></td></tr>
+
+
+			</table>
+
+		</form>
+
+	</section>
+	
+</body>
+</html>
