@@ -5,11 +5,12 @@
 			width: 400px;
 			margin: 30px;
 			border: 1px solid green;
+			text-align: center;
 		}
 
 #zonaDestino{
 
-			border: 2px solid red;
+			border: 2px solid yellow;
 			float: left;
 			width: 600px;
 			height: 300px;

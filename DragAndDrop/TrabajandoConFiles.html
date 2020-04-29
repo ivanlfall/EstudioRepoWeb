@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Trabajando con Files</title>
+
+<style>
+	#zonadestino{
+
+		border: 2px solid green;
+		width: 400px;
+		height: 300px;
+	}
+</style>
+	
+<script type="text/javascript">
+	
+	function inicio(){
+
+		destino = document.getElementById("zonadestino");
+
+		destino.addEventListener("dragenter", function(e){
+			e.preventDefault();
+		});
+		destino.addEventListener("dragover", function(e){
+			e.preventDefault();
+		});
+		destino.addEventListener("drop", soltado);
+	}
+
+	function soltado(e){
+		e.preventDefault();
+		var archivos = e.dataTransfer.files;
+		let listado = "";
+
+		for(let f = 0; f<archivos.length ; f++){
+
+			listado += "Archivo: "+archivos[f].name + " Tamaño: "+(archivos[f].size/1024).toFixed(2) + "Kb <br>" ;
+		}
+
+		destino.innerHTML=listado;
+	}
+
+	window.onload=inicio;
+</script>
+
+</head>
+<body>
+	<section id="zonadestino">
+		Arrastre aquí.
+	</section>
+	
+</body>
+</html>

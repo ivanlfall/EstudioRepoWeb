@@ -18,32 +18,23 @@
 	
 	<script>
 		
-		function inicio(){
+		function comenzar(){
 
-var lienzo = document.getElementById("lienzo");
-var pincel = lienzo.getContext("2d");
+			var lienzo = document.getElementById("lienzo");
+			var pincel = lienzo.getContext("2d");
 
-/*pincel.fillStyle="#E3E840";
-pincel.fillRect(100,150,70,70);
+			var img = new Image();
+			img.src="https://www.w3schools.com/tags/img_the_scream.jpg";
 
-pincel.globalCompositeOperation="lighter";
+			img.addEventListener("load", dibujar, false);
+		}
 
-pincel.fillStyle="#405EE8";
-pincel.fillRect(100+35,150+35,70,70);*/
+		function dibujar(){
 
-var imagen = new Image();
+			pincel.drawImage(img, 0, 0);
+		}
 
-imagen.src="https://i.pinimg.com/564x/6a/be/53/6abe533a7d5d92a45a48ceafbb0944d7.jpg";
-
-imagen.addEventListener("load", function(){
-	pincel.drawImage(imagen, 0, 0);
-}, false);
-
-
-}
-
-
-window.onload=inicio;
+		window.onload=comenzar;
 	</script>
 
 </head>
